@@ -4,7 +4,7 @@ description = "This is a project description"
 relativeURLs = true
 theme = "theme" 
 [params]
-    authors = [" Nielsen", "Inga Jensen", "Mikkel Andersen"]
+    authors = ["Åh nej åh nej åh nej Nielsen", "Inga Jensen", "Mikkel Andersen"]
     notebook = "/explainer-notebook.html"
     data = "https://drive.google.com"
     github = "https://github.com/peterampazzo/project-website-template"
