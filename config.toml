@@ -1,6 +1,6 @@
-baseURL = "https://davidalvabro.github.io/webpage_for_comsum"
+baseURL = "https://davidAlvaBro.github.io/webpage_for_comsum/"
 title = "Project Title"
-description = "This is a project description that I made"
+description = "This is a project description"
 relativeURLs = true
 theme = "theme" 
 [params]
@@ -17,4 +17,3 @@ theme = "theme"
     [[params.nav]]
         label = "Text"
         link = "/text-analysis"
-
