@@ -1,19 +1,22 @@
 baseURL = "https://davidAlvaBro.github.io/webpage_for_comsum/"
-title = "Project Title"
-description = "This is a project description"
+title = "Social Graph of Books"
+description = "Doesn't matter"
 relativeURLs = true
 theme = "theme" 
 [params]
-    authors = ["Åh nej åh nej åh nej Nielsen", "Inga Jensen", "Mikkel Andersen"]
+    authors = ["August Hertz Bugge", "David Bro Ludvigsen", "Sebastian Nicolai Fabricius Grut"]
     notebook = "/explainer-notebook.html"
     data = "https://drive.google.com"
-    github = "https://github.com/peterampazzo/project-website-template"
+    github = "https://github.com/davidAlvaBro/webpage_for_comsum"
     [[params.nav]]
         label = "Data"
         link = "/data-description"
     [[params.nav]]
-        label = "Network"
-        link = "/network-analysis"
+        label = "Shelf Network"
+        link = "/shelf-network"
     [[params.nav]]
-        label = "Text"
-        link = "/text-analysis"
+        label = "NLP Network"
+        link = "/nlp-network"
+    [[params.nav]]
+        label = "Findings"
+        link = "/findings"

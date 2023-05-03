@@ -1,8 +1,98 @@
 ---
-title: Home Page
+title: Social Graph of Books
 layout: single
 next: data-description
 ---
+This webpage investigates the relationship between which books people read, their genres and their contents. 
+[TODO Explain further?](#)
+
+# **Idea** 
+In this webpage we investigate the question;<br> 
+**Do people tend to read the same genre of books?**.<br> 
+To answer this question we look at a social graph of books, where nodes are books and edges between books are created if the two books are both owned by the same user enough times. We use this graph to cluster books together in communities. We compare these communities with the true genres of the books, to see if there is a correlation. <br>
+We also create another network where edges are created if the inner product between the normalized TF-IDF vector for each books description is larger than a certain threshhold. We imagine this network encaptures the [budskab](#Help cant translate) of the books. We compare this network with the social one to see if the two networks has roughly the same communities. 
+
+# **Table of Contents** 
+- [Social Graph of Books]("/")
+    - [Idea](#idea)
+    - [Dataset](#dataset) 
+    - [Short Conclusion](#short-conclusion) 
+- [Data Description](data-description) [TODO rename Data Decription](#)
+    - [Data Statistics](data-description#data-statistics)
+    - [Merge Datasets](data-description#merge-datasets)
+- [Shelf Network](shelf-network)
+    - [Edges](shelf-network#edges)
+    - [Network](shelf-network#network)
+    - [Communities](shelf-network#communities)
+    - [Genres](shelf-network#genres)
+    - [Word Clouds](shelf-network#word-clouds)
+- [NLP Network](nlp-network)
+    - [Edges](nlp-network#edges)
+    - [Network](nlp-network#network)
+    - [Communities](nlp-network#communities)
+    - [Genres](nlp-network#genres)
+    - [Word Clouds](nlp-network#word-clouds)
+- [Findings](findings)
+    - [Network Comparison](findings#network-comparison)
+    - [In Depth Conclusions](findings#in-depth-conclusions)
+
+# **Dataset** 
+As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which book they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*. The former contains data about the 2.36 million books, while the later contains 229 million users shelves. <br>
+Because this first dataset does not contain descriptions of the books, we found the [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) dataset, that contains book descriptions of 10 thousind books.<br>
+In [Data description](data-description) you will find instruction on how we merge the two datasets by match titles. 
+
+# Short Conclusion 
+[TODO implement this](#)
+
+
+# TODO list for content 
+## Idea 
+- Find social trends in which books people read - yes?
+- Social vs NLP analysis - yes?
+
+## Data 
+- Where do we get the data from - yes?
+    - Like the slides: Goodreads and random guy - yes?  
+    - Specs (All the sizes) - little more? 
+    - Biases?! TODO 
+
+## Preprocessing 
+- Collect datasets into one 
+    - Match titles of books 
+    - Clean dataset from duplicates and the likes 
+
+## Preprocessing II - Generate networks 
+- Shelves network 
+    - Choice of weighting of edges
+    - Chose threshhold 
+    - Use NetworkX to create network
+- TL-IDF 
+    - Generate TL-IDF scores for each book
+    - And for each Genre 
+    - Chose top genre for each book with TF-IDF 
+    - Make edges with TF-IDF inner products (normalized)
+    - Generate network to have as many edges as the shelves one 
+
+## Network Analysis 
+- Communities 
+    - Louvain to create networks
+    - Check modularity to know if we form communities
+    - Compare communities from the networks, and the genres
+        - Create confusion matrices (do they find the same?)
+
+- Assortativity 
+    - Assortativity between genres 
+    - Assortativity for degree? 
+
+## NLP Analysis 
+- Create word clouds for communities 
+
+## Conclusion 
+- Shelves better decides genre in communities 
+
+
+
+
 # I am DAVID 
 Donec posuere justo at risus [efficitur convallis](#). Donec enim nibh, aliquet vel risus id, tincidunt consectetur felis. Proin porttitor odio a orci accumsan bibendum id at risus. Sed a posuere odio, ac lobortis augue. Maecenas aliquet ipsum vel libero dignissim, non aliquet justo eleifend. Fusce mollis, ante eget tincidunt imperdiet, mi ligula venenatis ex, ut pulvinar nunc ipsum tempus eros. Aliquam erat volutpat. Sed id _iaculis arcu_, sit amet varius libero. Etiam quis nisl pretium, eleifend quam nec, rutrum sapien. **Donec rutrum accumsan orci.**
 
