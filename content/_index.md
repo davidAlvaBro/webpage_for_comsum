@@ -7,17 +7,19 @@ This webpage investigates the relationship between which books people read, thei
 [TODO Explain further?](#)
 
 # **Idea** 
-In this webpage we investigate the question;<br> 
-**Do people tend to read the same genre of books?**.<br> 
+In this webpage we investigate the question;
+
+> Do people tend to read the same genre of books? 
+
 To answer this question we look at a social graph of books, where nodes are books and edges between books are created if the two books are both owned by the same user enough times. We use this graph to cluster books together in communities. We compare these communities with the true genres of the books, to see if there is a correlation. <br>
 We also create another network where edges are created if the inner product between the normalized TF-IDF vector for each books description is larger than a certain threshhold. We imagine this network encaptures the [budskab](#Help cant translate) of the books. We compare this network with the social one to see if the two networks has roughly the same communities. 
 
 # **Table of Contents** 
-- [Social Graph of Books]("/")
+- [Social Graph of Books](/)
     - [Idea](#idea)
-    - [Dataset](#dataset) 
     - [Short Conclusion](#short-conclusion) 
 - [Data Description](data-description) [TODO rename Data Decription](#)
+    - [Dataset](data-description#dataset) 
     - [Data Statistics](data-description#data-statistics)
     - [Merge Datasets](data-description#merge-datasets)
 - [Shelf Network](shelf-network)
@@ -35,11 +37,6 @@ We also create another network where edges are created if the inner product betw
 - [Findings](findings)
     - [Network Comparison](findings#network-comparison)
     - [In Depth Conclusions](findings#in-depth-conclusions)
-
-# **Dataset** 
-As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which book they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*. The former contains data about the 2.36 million books, while the later contains 229 million users shelves. <br>
-Because this first dataset does not contain descriptions of the books, we found the [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) dataset, that contains book descriptions of 10 thousind books.<br>
-In [Data description](data-description) you will find instruction on how we merge the two datasets by match titles. 
 
 # Short Conclusion 
 [TODO implement this](#)
@@ -118,11 +115,7 @@ Phasellus viverra tellus viverra purus placerat, et lacinia mauris tristique. Na
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec mauris aliquet, convallis ligula vel, mollis est. Fusce accumsan massa vel lectus dapibus, at vehicula elit auctor.
 
-| Column 1  | Column 2  |  Column 3 |
-|---|---|---|
-| 1 | 4 | 7 |
-| 2 | 5 | 8 |
-| 3 | 6 | 9 |
+
 
 ## [Explainer Notebook](explainer-notebook.html)
 

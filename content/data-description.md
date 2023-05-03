@@ -4,37 +4,40 @@ prev: "/"
 next: shelf-network
 ---
 
+# **Dataset** 
+As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which book they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*, which we will call *Book Shelves* and *Book Interactions* respectively. The former contains data about the 2.36 million books, while the later contains 876,145 users shelves. <br>
+Because this first dataset does not contain descriptions of the books, we found the [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) dataset, that contains book descriptions of 10 thousind books. We call this dataset *Book Descriptions*.<br>
+<br>
+[TODO considerations of biases](#)
+
+
 # **Data Statistics** 
+As mentioned we combine datasets from the two sources [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) and [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) to create a dataset that contains both which books consumers own, the descriptions of the books and the genres. Below is a small table explaining the size of the datasets.
+|                 | *Book Shelves*  | *Book Interactions* | *Book Descriptions* |
+|---              | ---             | ---                 |  ---                | 
+| Data Points     |    1,521,962    |     228,648,342     |       10,000        | 
+| Storage         |     714.3 MB    |        4.2 GB       |       9.9 MB        | 
+| Attributes      |       16        |          2          |          4          | 
+| Attributes Used |       2         |          2          |          3          |
+
+The *goodreads_interactions* dataframe contains 228,648,342 interactions (books on shelves), which is collapsed to 876,145 shelves. 
+
 # **Merge Datasets** 
+To combine the dataframes we match titles from *Book Shelves* and from *Book Descriptions*. Before we do this we drop all faulty elements in both dataframes that do not have a title. This, suprisingly, contains half of the books in *Book Shelves*, and leaves only 646,906 books in the *Book Shelves*.<br>
+Next, the titles are compared, however, this is not as easy as it sounds as the titles in *Book Descriptions* often have added information in the titles, such as, *The Hunger Games (The Hunger Games, #1)*. 
+Here the *(The Hunger Games, #1)* is the problem because it is not in the titles of *Book Shelves*. We therefore strip everything that is inside a parentasis away, and remove all non-character symbols such as - or ^. 
+In *Book Shelves* and *Book Descriptions* we have 7,690 matches after removing duplicates. In this way we create a dataframe *Book_df* that contains the *id, title, description, genres* of these 7,690 books.<br>
+
+Next, the *Book Interactions* that does not concern these 7,690 books are dropped. This leaves us with 68,176,467 interactions, 818,569 shelves and 7676 unique books (14 was not in *Book Interactions*). 
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nulla tellus, tempus sed lobortis quis, venenatis ac ante. Maecenas accumsan augue ultricies metus hendrerit, in ultrices urna fringilla. Suspendisse lobortis egestas magna, sit amet fermentum ligula tincidunt vitae. Suspendisse cursus non dui a vulputate. Cras vestibulum vulputate enim eu placerat. Ut scelerisque semper justo sit amet auctor. Aliquam sit amet iaculis tortor.
 
 > Nulla in justo hendrerit, tincidunt mauris et, porta est. Donec in leo vitae est ultrices dapibus id nec tortor. Maecenas ut ipsum eu nisl cursus facilisis scelerisque eu ex. Aliquam euismod elementum libero, at vehicula ipsum.
 
-Nam commodo lorem quis tortor euismod, ut ultrices orci aliquet. Sed eget dui nec sem ullamcorper convallis id nec ante. Aliquam ultricies a massa quis semper. Donec suscipit augue ut sagittis hendrerit. Aliquam erat volutpat. Proin aliquet maximus nibh, id aliquet justo maximus at. Sed accumsan ante id aliquam pellentesque. 
-
 ![](/images/dtu-logo.png)
 
-Aliquam nec hendrerit quam. Suspendisse maximus eros sollicitudin, accumsan turpis eu, blandit nulla. Nunc lorem elit, molestie at libero gravida, placerat consectetur ante. Sed tincidunt viverra tellus a vehicula.
-
-
 1. Lorem ipsum dolor sit amet
 1. Lorem ipsum dolor sit amet
 1. Lorem ipsum dolor sit amet
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit lobortis turpis. Praesent porttitor, turpis eu posuere molestie, sem dolor scelerisque sapien, eu aliquet ante felis ac metus. Pellentesque semper ultricies urna. Aenean auctor, turpis ut convallis ultrices, eros tellus bibendum risus, eu varius velit ante et diam. 
-
-* Lorem ipsum dolor sit amet
-* Lorem ipsum dolor sit amet
-* Lorem ipsum dolor sit amet
-
-In suscipit lorem orci, eu placerat nibh dignissim ut. Nullam consequat nisl dui, in ornare risus porttitor sed. Integer vitae nibh semper purus ultrices rutrum. Pellentesque non diam ornare, imperdiet elit a, tempus lacus. Suspendisse viverra euismod dapibus.
-
-Suspendisse non tellus faucibus, dapibus leo at, elementum magna. Fusce quis ante ex. In non ex eleifend, luctus risus quis, dapibus velit. Nulla facilisi. Integer iaculis arcu at fermentum varius. Donec auctor dolor non dolor pulvinar luctus. Mauris vestibulum lacinia nisl, a dictum erat molestie sed. Vivamus vel blandit turpis, nec sollicitudin massa. Nunc velit eros, tristique elementum congue eget, auctor dictum tellus. 
-
-Quisque iaculis, sem quis imperdiet faucibus, nunc lorem feugiat purus, vestibulum condimentum turpis turpis ut ante. Donec vestibulum lectus ut ullamcorper condimentum. Curabitur fermentum nulla vitae arcu sollicitudin pulvinar.
 
 <img src="/images/dtu-logo.png" width="200" />
-
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse eu tellus ut erat porttitor luctus. Vivamus aliquam auctor massa, in auctor orci. Ut quis enim ut lorem consectetur blandit dictum eu mauris.
