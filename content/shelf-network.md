@@ -3,16 +3,19 @@ title: Shelf Network
 prev: data-description
 next: nlp-network
 ---
-Books are nodes and edges are created if many consumers have both books on their shelves. 
+In the network books are nodes and edges are created if many consumers have both books on their shelves. 
 # **Edges**
 An edge is created in the graph if, 
+
 $$e_{book_i, book_j} = \frac{C_{book_i, book_j}}{\min_{i, j}(C_{book_i}, C_{book_j})} \geq \frac{1}{2}$$
+
 where $C_{book_i, book_j}$ is the number of shelves $book_i$ appears in which $book_j$ also appears in, likewise $C_{book_i}$ is the amount of shelves $book_i$ appears in. 
 This way the maximal value of $e_{book_i, book_j}$ is 1, and the value represents the chance of $book_i$ being on a shelf given $book_j$ is on that shelf (here it is assumed that $C_{book_i} \geq C_{book_j}$, as the reverse is not true). <br>
 
 The value 0.5 is chosen because we do not want a too densely connected graph, but we also want as many of the books to still be in the dataframe as possible. At last the value 0.5 also expresses that for an edge to be there, then the books must appear together at least in half of the shelves where the book that is in the least shelves appears.
 
-## Choice of threshhold 
+
+## **Choice of threshhold**
 [TODO put in a picture of a distribution here]()
 There are 28,704,535 unique appearances together of the 7676 books, hence, if we did not create a threshhold the graph would have an average degree of 3740, which is half of the network size. We definitly need a threshhold to get a less connected graph.<br>
 We explored three different weighings for the edges.
@@ -23,8 +26,10 @@ We explored three different weighings for the edges.
 The first method has the issue that books that appear more often in the dataset will be more likely to have appeared more times with the other books, hence, books that appear little will not be removed entirely from the if we use the first method of weighing. Therefore, we needed something more addaptive. 
 <br>
 In the second method the edge weights are given by, 
+
 $$e_{book_i, book_j} = \frac{C_{book_i, book_j}}{\sqrt{C_{book_i} \cdot C_{book_j}}}.$$
-This introduces a new issue, which is that if a book $book_i$ always appear together with $book_j$, but $book_j$ is much more frequent in the dataset, then the edge between these two books is small. This means that books that frequently appear in the dataset will always have small edge weights, and thus, will be removed if we set a threshhold. This is not ideal either, as *The Hunger Games* should probably always appear in shelves that have *Catching Fire* (the second Hunger Games book), but the other way around is probably not true, as people might not had read that far yet. These two books should definitly have a strong connection, as must users look at both. 
+
+This introduces a new issue, which is that if a book $book_{i}$ always appear together with $book_{j}$, but $book_{j}$  is much more frequent in the dataset, then the edge between these two books is small. This means that books that frequently appear in the dataset will always have small edge weights, and thus, will be removed if we set a threshhold. This is not ideal either, as *The Hunger Games* should probably always appear in shelves that have *Catching Fire* (the second Hunger Games book), but the other way around is probably not true, as people might not had read that far yet. These two books should definitly have a strong connection, as must users look at both. 
 <br>
 The last method is the one we use. This is because all books have a chance of forming strong edges with all other books. 
 To evaluate if 0.5 is a possible threshold we try it, along with other thresholds, and observe how many books are completely dropped, and we look at the degree distribution. In these findings a threshhold in the range 0.4-0.5 is optimal, as the graph has almost all books included (7665-7539), but does not have insanly high degrees (33-15). We choose 0.5, because we want to distinguish the graph into communitites that are not too large, and because of the nice property that the books appear togther at least half of the time the least frequent book appears. 
