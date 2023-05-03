@@ -5,7 +5,7 @@ next: shelf-network
 ---
 
 # **Dataset** 
-As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which book they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*, which we will call *Book Shelves* and *Book Interactions* respectively. The former contains data about the 2.36 million books, while the later contains 876,145 users shelves. <br>
+As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which books they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*, which we will call *Book Shelves* and *Book Interactions* respectively. The former contains data about the 2.36 million books, while the later contains 876,145 users shelves. <br>
 Because this first dataset does not contain descriptions of the books, we found the [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) dataset, that contains book descriptions of 10 thousind books. We call this dataset *Book Descriptions*.<br>
 <br>
 [TODO considerations of biases](#)
@@ -30,14 +30,5 @@ In *Book Shelves* and *Book Descriptions* we have 7,690 matches after removing d
 
 Next, the *Book Interactions* that does not concern these 7,690 books are dropped. This leaves us with 68,176,467 interactions, 818,569 shelves and 7676 unique books (14 was not in *Book Interactions*). 
 
-
-
-> Nulla in justo hendrerit, tincidunt mauris et, porta est. Donec in leo vitae est ultrices dapibus id nec tortor. Maecenas ut ipsum eu nisl cursus facilisis scelerisque eu ex. Aliquam euismod elementum libero, at vehicula ipsum.
-
-![](/images/dtu-logo.png)
-
-1. Lorem ipsum dolor sit amet
-1. Lorem ipsum dolor sit amet
-1. Lorem ipsum dolor sit amet
-
-<img src="/images/dtu-logo.png" width="200" />
+# **TF-IDF of Books and Genres**
+[TODO Write this]()
