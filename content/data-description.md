@@ -31,4 +31,10 @@ In *Book Shelves* and *Book Descriptions* we have 7,690 matches after removing d
 Next, the *Book Interactions* that does not concern these 7,690 books are dropped. This leaves us with 68,176,467 interactions, 818,569 shelves and 7676 unique books (14 was not in *Book Interactions*). 
 
 # **TF-IDF of Books and Genres**
-[TODO Write this]()
+TF-IDF values for words in a document that is part of a corpus are great for detecting which words are important for that specific document (what distinguishes the document). We will use the TF-IDF values for the books in various ways. We will build a network where books are nodes and edges are created if the two books inner product between their normalized TF-IDF values based on their descriptions is above a certain threshold. We will also use the TF-IDF values for communities in both our graphs to generate word clouds describing the the communities. Here each document is the combination of all decriptions of books in that community. 
+<br>
+We will frequently use the TF-IDF values of different partitions of the books, but in all cases the entire corpus will consists of the descriptions of all the books. We therefore compute these TF values for each book and store them - all other TF values for different partitions can be made by addeding together the books TF values. 
+<br>
+The IDF values needs to be recalculated each time we partition our books into different groupings, as the amount of documents changes. 
+<br>
+In our raw dataset each book have multiple genres. Later in our analysis we want a books genre simplified to one simple class. We make a new document by including the all books from that genre, then we calculate the TF-IDF values for each genre like this. This genre TF-IDF is normalized, as are the books TF-IDF's and we assign the book that of its genres that it has the largest TF-IDF normalized inner product with. These genres are stored in the *Book_df* dataframe. 

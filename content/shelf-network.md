@@ -40,12 +40,12 @@ The network is implemented with *NetworkX* and [TODO write about attributes here
 
 # **Communities**
 We use the Louvain algorithm to partition our graph into communities. We get [TODO insert the number of communities](), where the largest community is quite big and has [TODO insert number of nodes in the largest community](). We calculate the modularity of this partition to be [TODO insert here](), and check if this is significant. To do this we utilize the double edge swap algorithm to create a new graph, but where each node has the same degree as the previous graph. We do this [TODO how many times?](), to check if the modularity of the true network is significantly different. Below you can see the histogram of modularities for the random networks, along with the modularity of the true network.
-![](/images/dtu-logo.png) [TODO insert the correct figure here]()
+<img src="/images/dtu-logo.png" width="200" />  [TODO insert the correct figure here]()
 We can see that the modularity of the true network is indeed an outlier, and we have likely found interesting communities. 
 
 # **Genres**
 Next is the most interesting analysis we make. We use the communities found with the Louvain algorithm along with the true genres of the books (found with NLP analysis) to create a heatmap of the communities and genres. The heatmap is seen below. 
-![](/images/dtu-logo.png) [TODO insert the correct figure here (genre vs. shelf heatmap)]()
+<img src="/images/dtu-logo.png" width="200" />  [TODO insert the correct figure here (genre vs. shelf heatmap)]()
 The number assigned to each cell is the number of books in that the corresponding community that also have the corresponding genre. The color of each cell is the ratio between the cells number and the sum of the column. This is to only highlight the cells that contain an entire genre. 
 <br>
 As can be seen in this figure, most of the gernes are encapsulated by one community, however, this is mostly due to the large community that contains roughly a third of the books. 
