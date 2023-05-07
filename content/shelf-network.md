@@ -9,7 +9,7 @@ An edge is created in the graph if,
 
 $$e_{book_i, book_j} = \frac{C_{book_i, book_j}}{\min_{i, j}(C_{book_i}, C_{book_j})} \geq \frac{1}{2}$$
 
-where $$C_{book_i, book_j}$$ is the number of shelves $book_i$ appears in which $book_j$ also appears in, likewise $C_{book_i}$ is the amount of shelves $book_i$ appears in. 
+where $C_{book_i, book_j}$ is the number of shelves $book_i$ appears in which $book_j$ also appears in, likewise $C_{book_i}$ is the amount of shelves $book_i$ appears in. 
 This way the maximal value of $e_{book_i, book_j}$ is 1, and the value represents the chance of $book_i$ being on a shelf given $book_j$ is on that shelf, 
 $$e_{book_i, book_j} \approx \mathbb{P}(book_i | book_j), C_{book_i} \geq C_{book_j}.$$
 Here $\mathbb{P}(book_i | book_j)$ is the probability of $book_i$ being on a shelf, given $book_j$ is on that shelf. This only holds when $C_{book_i} \geq C_{book_j}$, because we only divide with the minimum of the two. In the opposite case, $ C_{book_j} \geq C_{book_i}$, the edge respresents $\mathbb{P}(book_j | book_i)$.  <br>
