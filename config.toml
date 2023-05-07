@@ -5,7 +5,7 @@ relativeURLs = true
 theme = "theme" 
 [params]
     authors = ["August Hertz Bugge", "David Bro Ludvigsen", "Sebastian Nicolai Fabricius Grut"]
-    notebook = "/explainer-notebook.html"
+    notebook = "https://github.com/davidAlvaBro/comsocsci_final_proj/blob/main/Explainer_notebook.ipynb"
     data = "https://drive.google.com"
     github = "https://github.com/davidAlvaBro/webpage_for_comsum"
     [[params.nav]]
