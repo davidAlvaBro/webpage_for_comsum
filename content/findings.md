@@ -17,7 +17,7 @@ Neither of the graphs are highly correlated with the *top_genre* either.
 
 
 # **Conclusions**
-We find that there is indeed structure to the Shelf Network generated, and thus, which books people read. However, this does not capture the *top_genres* found with NLP. The genres of the books seperates the communities quite well, when looked at individually as seen in [shelf network - Genres](shelf-network#genres) the bottom plots. We also found that NLP does not find the same tendencies as a the shelf graph. 
+We find that there is indeed structure to the Shelf Network generated, and thus, which books people read. However, this does not capture the *top_genres* found with NLP. The genres of the books seperates the communities quite well, when looked at individually as seen in [shelf network - Genres](https://davidalvabro.github.io/webpage_for_comsum/shelf-network#genres) the bottom plots. We also found that NLP does not find the same tendencies as a the shelf graph. 
 
 A large problem with our approach of using TF-IDF vectors for book descriptions is that names will be the most important words. This does mostly not capture anything about the contents of the book. This also means that our wordclouds are less interesting to look at. 
 

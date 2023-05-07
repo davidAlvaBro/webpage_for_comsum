@@ -3,16 +3,16 @@ title: NLP Network
 prev: shelf-network
 next: findings
 ---
-In the network books are nodes and edges are created if many the normalized TF-IDF vectors have larger inner products than some threshold. This network is made to have the same amount of edges as the [shelf network](shelf-network) by choosing an appropriate threshold.
+In the network books are nodes and edges are created if many the normalized TF-IDF vectors have larger inner products than some threshold. This network is made to have the same amount of edges as the [shelf network](https://davidalvabro.github.io/webpage_for_comsum/shelf-network) by choosing an appropriate threshold.
 
-*(disclaimer this page refers a lot to [shelf network](shelf-network), as the analysis made here is very similar. Read that page first!)*
+*(disclaimer this page refers a lot to [shelf network](https://davidalvabro.github.io/webpage_for_comsum/shelf-network), as the analysis made here is very similar. Read that page first!)*
 # **Edges**
-We take the inner product of all pairs of normalized TF-IDF vectors found in the preprocessing part of the project to make the weight attributed to each edge in the graph. Then we chose a threshold, 0.056, that yields the same number of edges, 109,627, as the we have in the [shelf network](shelf-network). 
+We take the inner product of all pairs of normalized TF-IDF vectors found in the preprocessing part of the project to make the weight attributed to each edge in the graph. Then we chose a threshold, 0.056, that yields the same number of edges, 109,627, as the we have in the [shelf network](https://davidalvabro.github.io/webpage_for_comsum/shelf-network#edges). 
 
 # **Network**
 Again the network is implemented with *NetworkX* and the nodes have the same attributes. 
 
-### **Assortativity** TODO check this BODY
+### **Assortativity**
 The same analysis done for the Shelf Graph is made here. The assortativity for the network with respect to genres is 0.19, which is slightly larger than for the Shelf Graph. 
 
 The assortativity with respect to degree with varying thresholds is shown in the figure below. We see that links between high degree nodes and links between low degree nodes are more common in this network. This is due to the nature of creating a mathematical network where most nodes have the same likelihood of making a connections, while in the Shelf Graph we have a social network that is dependent on the human user.
@@ -22,7 +22,7 @@ The assortativity with respect to degree with varying thresholds is shown in the
 The Louvain algorithm is again used to partition the graph into communities. We get 37 communities with the largest one having 721 members. This graph has more uniformly distributed in community sizes than the Shelf Graph, as seen in the histogram below: 
 <img src="/images/nlp_louvain_community_distribution.png" width="500" /> 
 
-We check if the modularity of this partition is significant with the same method as used for the [shelf network](shelf-network). 
+We check if the modularity of this partition is significant with the same method as used for the [shelf network](https://davidalvabro.github.io/webpage_for_comsum/shelf-network#communities). 
 <img src="/images/nlp_modularity_histogram.png" width="500" /> 
 
 We see that the modularity of the NLP network has is significantly different from the randomly created networks where nodes have the same degree. 
