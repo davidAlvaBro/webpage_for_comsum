@@ -5,7 +5,7 @@ next: shelf-network
 ---
 
 # **Dataset** 
-As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset were [TODO CITE](#) have collected users Goodreads shelves (which books they own). We use the two datasets *Goodreads_books* and *goodreads_interactions*, which we will call *Book Shelves* and *Book Interactions* respectively. The former contains data about the 2.36 million books, while the later contains 876,145 users shelves. <br>
+As mentioned earlier we use two datasets for our investigation. The first is the [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home) dataset we [TODO CITE](#) have collected users Goodreads shelves, telling us which books they own. We use the two datasets *Goodreads_books* and *goodreads_interactions*, which we will call *Book Shelves* and *Book Interactions* respectively. The former contains data about the 2.36 million books, while the later contains 876,145 users shelves. <br>
 Because this first dataset does not contain descriptions of the books, we found the [Goodbooks](https://github.com/malcolmosh/goodbooks-10k-extended/blob/master/README.md) dataset, that contains book descriptions of 10 thousind books. We call this dataset *Book Descriptions*.<br>
 <br>
 [TODO considerations of biases](#)
