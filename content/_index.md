@@ -35,10 +35,15 @@ We also create another network where edges are created if the inner product betw
     - [Word Clouds](nlp-network#word-clouds)
 - [Findings](findings)
     - [Network Comparison](findings#network-comparison)
-    - [In Depth Conclusions](findings#in-depth-conclusions)
+    - [Conclusions](findings#conclusions)
 
 # Short Conclusion 
-[TODO implement this](#) 
-We have found that there is a 
-## [Explainer Notebook](explainer-notebook.html)
+We find that there is indeed structure to the Shelf Network generated and thus, what books people read. However, this does not capture the *top_genres* found with NLP. The genres of the books seperates the communities quite well, when looked at individually as seen in [shelf network - Genres](shelf-network#genres) the bottom plots. We also found that NLP graph does not find the same tendencies as a the Shelf Graph. 
+
+A large problem with our approach of using TF-IDF vectors for book descriptions is that names will be the most important words. This does mostly not capture anything about the contents of the book. This also means that our wordclouds are less interesting to look at. 
+
+At last for further research it could be interesting to look at entire books to capture the true content of these books. This might make interesting NLP Graphs, and would definitly yield interesting wordclouds. Especially if names are removed with clever filtering. 
+
+Another idea, is to use reviews to capture sentiment about books. Then we could investigate which books are popular, what people like, and maybe express what each individual likes in books (requring people kept track of *liked books*). 
+## [Explainer Notebook](https://github.com/davidAlvaBro/comsocsci_final_proj/blob/main/Explainer_notebook.ipynb)
 

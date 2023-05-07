@@ -23,7 +23,7 @@ The Louvain algorithm is again used to partition the graph into communities. We 
 <img src="/images/nlp_louvain_community_distribution.png" width="500" /> 
 
 We check if the modularity of this partition is significant with the same method as used for the [shelf network](shelf-network). 
-<img src="/images/nlp_louvain_community_distribution.png" width="500" /> 
+<img src="/images/nlp_modularity_histogram.png" width="500" /> 
 
 We see that the modularity of the NLP network has is significantly different from the randomly created networks where nodes have the same degree. 
 
