@@ -4,21 +4,19 @@ layout: single
 next: data-description
 ---
 This webpage investigates the relationship between which books people read, their genres and their contents. 
-[TODO Explain further?](#)
-
 # **Idea** 
 We would like to investigate this question;
 
 > Is there a structure to the books that people read? 
 
-To answer this question we look at a social graph of books, where nodes are books and edges are present between books if the two books are both owned by the same user enough times. We use this graph to cluster books together in communities. We compare these communities with the true genres of the books, to see if there is a correlation. <br>
-We also create another network where edges are created if the inner product between the normalized TF-IDF vector for each books description is larger than a certain threshhold. We imagine this network possibly encaptures the general structure of the books. We compare this network with the social one to see if the two networks have roughly the same communities.
+To answer this question we look at a social graph of books, where nodes are books and edges are present between books if the two books are both owned by the same user enough times. We use this graph to cluster books together in communities. We compare these communities with the genres of the books, to see if there is a correlation. <br><br>
+We also create another network where edges are created if the inner product between the normalized TF-IDF vector for each books description is larger than a certain threshhold. We imagine that the structure of this network resembels how the descriptions of the books are related. We compare this network with the social one to see if the two networks have roughly the same communities.
 
 # **Table of Contents** 
 - [Social Graph of Books](/)
     - [Idea](#idea)
     - [Short Conclusion](#short-conclusion) 
-- [Data Description](data-description) [TODO rename Data Decription](#)
+- [Data Description](data-description)
     - [Dataset](data-description#dataset) 
     - [Data Statistics](data-description#data-statistics)
     - [Merge Datasets](data-description#merge-datasets)
