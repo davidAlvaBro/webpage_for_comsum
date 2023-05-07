@@ -28,7 +28,7 @@ We check if the modularity of this partition is significant with the same method
 We see that the modularity of the NLP network has is significantly different from the randomly created networks where nodes have the same degree. 
 
 # **Genres**
-In this section we see the mixing matrix generated to inspect if the communities from the NLP graph indeed encaptures something about the genre. 
+In this section we see the mixing matrix generated to inspect if the communities from the NLP graph indeed incaptures something about the genre. 
 <img src="/images/mixing_nlp_genres.png" width="800" /> 
 In this heatmap of the mixing matrix we see that there is really no correlation between *top_genre* and the communities of the NLP Graph. We can see this easily because the rows are almost uniformly distributed. In specific outlier is community 7 and the genre *cooking*, as 43 of the 45 *cooking* books are in this community. There are a lot more elements, but it is the dominating *genre*.
 
@@ -41,6 +41,6 @@ Below we visualize the network with the netwulf library. In the first plot the c
 # **Word Clouds**
 <img src="/images/nlp_wordcloud_7.png" width="500" />
 <img src="/images/nlp_wordcloud_10.png" width="500" />
-Most of the wordclouds for the communities capture names, either of authors or characters, but nothing else of substance. 
-This can be seen in community 10 shown above. 
-However, community 7 does seem to significantly capture cookbook phrases like cooking and recipes, further supporting the idea that if we had a cookbook, it would very likely be in community 7.
+Most of the wordclouds for the communities captures names, either of authors or characters, but do not have much substance besides this. 
+This is examplified with community 10 shown above. 
+Community 7 does, however, seem to encapture cooking books which again shows that this genre have been completly captured by community 7.
