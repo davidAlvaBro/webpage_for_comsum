@@ -32,6 +32,11 @@ In this section we see the mixing matrix generated to inspect if the communities
 <img src="/images/mixing_nlp_genres.png" width="800" /> 
 In this heatmap of the mixing matrix we see that there is really no correlation between *top_genre* and the communities of the NLP Graph. We can see this easily because the rows are almost uniformly distributed. In specific outlier is community 7 and the genre *cooking*, as 43 of the 45 *cooking* books are in this community. There are a lot more elements, but it is the dominating *genre*.
 
+# **Visualization of the Network**
+Below we visualize the network with the netwulf library. In the first plot the colors correspond to Louvain communities, while the second plot shows the network colored by *top_genre*. It is very difficult to see the communities and the genres in the plots below in the middle of the graphs. In the edges some communities form (mostly in the top plot - the community plot). This is again expected as this is not a social graph, and because the degree distribution is not extremely skewed, like it is for the Shelf Graph. 
+<img src="/images/nlp_network_community.png" width="800" />
+<img src="/images/nlp_network_top_genre.png" width="800" />
+
 
 # **Word Clouds**
 <img src="/images/nlp_wordcloud_7.png" width="500" />
