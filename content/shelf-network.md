@@ -45,7 +45,7 @@ We are insterested in the structure of which books users choose to read together
 
 Because of this we also check the another form for mixing pattern, this time using all of a books genres, such that when two books $book_i$ and $book_j$ link we check if the set of their genres have any overlap. This will yield a larger fraction when checking, for each book, the amount of neighbours that meets the requirement. This measure descripes how many books are connnected to ones with at least one matching genre, and are not as restricted as the assortativity measure mentioned above. But as seen in the results below this mixing pattern measure gets very large which probably is due to the books having a lot of genres.
 
-Numbers 0.17 assortativity for *top_genre* and the mixing pattern with all genres have an average of 0.92
+The assortativity for the *top_genre* is 0.17 and the mixing pattern with all genres have an average of 0.92
 
 
 # **Communities**
