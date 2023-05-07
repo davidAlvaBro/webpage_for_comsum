@@ -4,6 +4,8 @@ prev: data-description
 next: nlp-network
 ---
 In the network books are nodes and edges are created if many consumers have both books on their shelves. 
+
+*(The inline math fields do not work on all browsers, this may result in $ instead of latex)*
 # **Edges**
 An edge is created in the graph if, 
 
